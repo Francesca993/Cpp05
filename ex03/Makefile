@@ -6,7 +6,7 @@
 #    By: francesca <francesca@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/04 21:38:50 by francesca         #+#    #+#              #
-#    Updated: 2026/02/11 17:12:11 by francesca        ###   ########.fr        #
+#    Updated: 2026/02/11 16:57:57 by francesca        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ OBJS		:=	$(patsubst $(SRCS_DIR)/%.cpp,$(OBJS_DIR)/%.o,$(SRCS))
 #–––––––––––––––––––––––––––––
 # Compiler and Flags
 #–––––––––––––––––––––––––––––
-NAME		=	Bureaucrat02
+NAME		=	Bureaucrat03
 CXX			=	c++
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
 RM			=	rm -f

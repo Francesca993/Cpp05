@@ -6,7 +6,7 @@
 /*   By: francesca <francesca@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:54:36 by francesca         #+#    #+#             */
-/*   Updated: 2026/02/11 17:15:41 by francesca        ###   ########.fr       */
+/*   Updated: 2026/02/11 18:29:04 by francesca        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -27,6 +28,22 @@ int main()
     Bureaucrat alfa("Alice", 1);
     Bureaucrat beta("Bob", 150);
     Bureaucrat delta("Charlie", 50);
+    
+    std::cout << MAGENTA << "--- Creating Intern and a new Form ---" << RESET << std::endl;
+    Intern someRandomIntern;
+    AForm* rrf;
+    AForm* brf;
+    try
+    {
+        rrf = someRandomIntern.makeForm("shrubbery creation", "Bender2");
+        std::cout << GREEN << *rrf << RESET << std::endl;
+        brf = someRandomIntern.makeForm("presidential pardon", "Bender2");
+        std::cout << GREEN << *brf << RESET << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
     std::cout << MAGENTA << "--- Bureaucrat ---" << std::endl;
     std::cout << alfa << std::endl;
@@ -117,6 +134,7 @@ int main()
     std::cout << pardon << std::endl;
     std::cout << robo << RESET << std::endl;
 
+    delete rrf;
     return (0);
     
 }
